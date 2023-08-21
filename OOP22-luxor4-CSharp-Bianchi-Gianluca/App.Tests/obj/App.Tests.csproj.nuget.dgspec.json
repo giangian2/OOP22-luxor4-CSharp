@@ -1,0 +1,117 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\App.Tests\\App.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\App.Tests\\App.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\App.Tests\\App.Tests.csproj",
+        "projectName": "App.Tests",
+        "projectPath": "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\App.Tests\\App.Tests.csproj",
+        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\App.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj": {
+                "projectPath": "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj",
+        "projectName": "OOP22-luxor4-CSharp-Bianchi-Gianluca",
+        "projectPath": "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj",
+        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
+        "projectStyle": "PackagesConfig",
+        "configFilePaths": [
+          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "projectReferences": {}
+          }
+        },
+        "packagesConfigPath": "C:\\Users\\Utente\\source\\repos\\OOP22-luxor4-CSharp\\OOP22-luxor4-CSharp-Bianchi-Gianluca\\packages.config"
+      },
+      "frameworks": {
+        "net46": {}
+      }
+    }
+  }
+}

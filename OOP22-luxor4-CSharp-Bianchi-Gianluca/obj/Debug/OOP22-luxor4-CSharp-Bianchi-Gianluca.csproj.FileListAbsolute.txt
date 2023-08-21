@@ -1,0 +1,11 @@
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\bin\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.exe.config
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\bin\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.exe
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\bin\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.pdb
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\bin\Debug\nunit.framework.dll
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\bin\Debug\nunit.framework.xml
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\obj\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj.AssemblyReference.cache
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\obj\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj.SuggestedBindingRedirects.cache
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\obj\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj.CoreCompileInputs.cache
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\obj\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj.CopyComplete
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\obj\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.exe
+C:\Users\Utente\source\repos\OOP22-luxor4-CSharp\OOP22-luxor4-CSharp-Bianchi-Gianluca\obj\Debug\OOP22-luxor4-CSharp-Bianchi-Gianluca.pdb
