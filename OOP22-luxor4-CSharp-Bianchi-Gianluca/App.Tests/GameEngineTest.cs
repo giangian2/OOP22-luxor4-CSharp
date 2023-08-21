@@ -18,32 +18,24 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests
     [TestFixture]
     internal class GameEngineTest
     {
-        public IGameEngine EngineLiv1;
-        public IGameEngine EngineLiv2;
-        public LevelDelegate Liv1;
-        public LevelDelegate Liv2;
+        public IGameEngine Engine;
 
 
         [SetUp]
         public void SetUp()
         {
-            this.EngineLiv1 = new GameEngineImpl(Levels.L1);
-            LevelDelegate level1 = () => {
-                return new WorldImpl(new RectBoundingBox(600, 800), 10, 1, "testPath1", EngineLiv1, new Cannon(470, 470));
-            };
-
-            EngineLiv1.SetGameState(new GameStateImpl(EngineLiv1, level1));
-            this.EngineLiv2 = new GameEngineImpl(Levels.L2);
+            Engine = new GameEngineImpl(Levels.L1);
         }
 
         [Test]
         public void TestMainLoopLevel1()
         {
+
             Assert.DoesNotThrow(() =>
             {
                 Task t = Task.Factory.StartNew(() => {
-                    EngineLiv1.InitGame();
-                    EngineLiv1.MainLoop();
+                    Engine.InitGame();
+                    Engine.MainLoop();
                 });
 
                 t.Wait(2000);
@@ -51,17 +43,26 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests
         }
 
         [Test]
-        public void TestMainLoopLevel2()
+        public void TestGameOver()
         {
             Assert.DoesNotThrow(() =>
             {
-                Task t = Task.Factory.StartNew(() => {
-                    EngineLiv2.InitGame();
-                    EngineLiv2.MainLoop();
+                Task t = Task.Factory.StartNew(() =>
+                {
+                    Engine.InitGame();
+                    Engine.MainLoop();
+                    foreach (int value in Enumerable.Range(1, 15))
+                    {
+                        Engine.GameState.IncScore();
+                    }
+
+                    Assert.True(Engine.GameState.IsGameOver());
                 });
 
                 t.Wait(2000);
             });
         }
+
+
     }
 }

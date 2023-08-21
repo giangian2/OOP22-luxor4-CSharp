@@ -9,7 +9,7 @@ using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Api;
 
 namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Api
 {
-    internal interface IGameEngine : IWorldEventListener
+    public interface IGameEngine : IWorldEventListener
     {
         /*
          * 
@@ -26,12 +26,20 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Api
          * Method used to set the Game STate that the Engine will use to perform the
          * update operation at every cycle.
          */
-        void SetGameState(IGameState gameState);
+        IGameState GameState
+        { 
+            get; 
+            set; 
+        }
 
         /*
          * Method used to set the View that the Engine will use to perform the
          * rendering operation at every cycle.
          */
-        void SetView(IScene view);
+        IScene View
+        {
+            get;
+            set;
+        }
     }
 }

@@ -15,18 +15,28 @@ using System.Threading.Tasks;
 
 namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
 {
+    /*
+     * The GameEngineImpl class will implement the IGameEngine and IWorldEventListener
+     * interface in such a way as to be able to directly manage the events related
+     * to the World that are triggered during the mainLoop.
+     */
     public class GameEngineImpl : IGameEngine
     {
-        private static int _period = 30;
-        private IGameState _gameState { get; set; }
-        private List<IWorldEvent> _eventQueue;
-        private IScene _view { get;  set; }
-        private KeyboardInputController _controller;
+        private static int _period = 30; // Period of rendering
+        private IGameState _gameState;
+        private List<IWorldEvent> _eventQueue; // Event queue used to process any event
+        private IScene _view; // View
+        private KeyboardInputController _controller; // Controller
         private Levels _currentLevel; // Selected Level
-        public delegate IWorld LevelDelegate();
-        
+
+
+        public delegate IWorld LevelDelegate(); // Delegate for represent the world initialization based on a specific level
+        public IScene View { get => _view; set => _view = value; }
+        public IGameState GameState { get => _gameState; set => _gameState = value; }
 
         /*
+         * Initialize the GameEngineImpl with the given level in order to instatiate the
+         * World properly and render the correct view.
          */
         public GameEngineImpl(Levels currentLevel)
         {
@@ -34,6 +44,8 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
         }
 
         /*
+         * Initialize the View and the World based on the selected level throught the
+         * delegate LevelDelegate.
          */
         public void InitGame()
         {
@@ -43,13 +55,19 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
             switch (this._currentLevel)
             {
                 case Levels.L1:
-
+                    /*
+                     * In case the selected level is l1,
+                     * the game state is instantiated having the GameEngine itself as an event
+                     * listener and a method is passed that implements the LevelDelegate method,
+                     * in this way there will be a fluid and scalable
+                     * development process for the creation of new levels.
+                     */
                     LevelDelegate level1 = () => {
                         return new WorldImpl(new RectBoundingBox(600,800), 10, 1, "testPath1",  this, new Cannon(470, 470));
                     };
-
-                    this.SetGameState(new GameStateImpl(this, level1));
-                    this.SetView(this._view);
+                    var gamestate1= new GameStateImpl(this, level1);
+                    this.GameState= gamestate1;
+                    this.View=(this._view);
                     break;
 
                 case Levels.L2:
@@ -58,14 +76,16 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
                         return new WorldImpl(new RectBoundingBox(600, 800), 20, 2, "testPath2", this, new Cannon(470, 470));
                     };
 
-                    this.SetGameState(new GameStateImpl(this, level2));
-                    this.SetView(this._view);
+                    var gamestate2 = new GameStateImpl(this, level2);
+                    this.GameState = gamestate2;
+                    this.View=(this._view);
 
                     break;
             }
         }
 
         /*
+         * Method used to start the game loop.
          */
         public void MainLoop()
         {
@@ -77,9 +97,9 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
                 long currentCycleStartTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
                 long elapsed = currentCycleStartTime - previousCycleStartTime;
                 ProcessInput();
-                updateGame(elapsed);
-                render();
-                waitForNextFrame(currentCycleStartTime);
+                UpdateGame(elapsed);
+                Render();
+                WaitForNextFrame(currentCycleStartTime);
                 previousCycleStartTime = currentCycleStartTime;
             }
 
@@ -88,67 +108,60 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
             // If game over state is reached, render the respective view
             if (this._gameState.IsWin())
             {
-                renderWin();
+                RenderWin();
             }
             else if (this._gameState.IsGameOver())
             {
-                renderGameOver();
+                RenderGameOver();
             }
         }
 
-        /*
-         */
-        public void SetGameState(IGameState gameState)
-        {
-            this._gameState=gameState;
-        }
-
-
-        public void SetView(IScene view)
-        {
-            this._view = view;
-        }
 
         /*
+         * Implementing the worldEventListener, this method will add the notified event
+         * to the event queue in orther to be processed in the further step.
          */
-        public void notifyEvent(IWorldEvent e)
+        public void NotifyEvent(IWorldEvent e)
         {
             this._eventQueue.Add(e);
         }
 
         /*
          */
-        private void renderGameOver()
+        private void RenderGameOver()
         {
             this._view.RenderGameOver();
         }
 
-        /**
-         * 
+        /* 
          */
-        private void renderWin()
+        private void RenderWin()
         {
             this._view.RenderWin();
         }
 
         /*
+         * Update the game state at each frame of the game loop.
          */
-        public void updateGame(long elapsed)
+        public void UpdateGame(long elapsed)
         {
             this._gameState.Update(elapsed); // update game state
             CheckEvents(); // check events generated from input and world
         }
 
         /*
+         * Renders the view at each frame of game loop.
          */
-        protected void render()
+        protected void Render()
         {
             //this._view.Render();
         }
 
         /*
+         * Waith for the next frame if the game loop cycle has taken less time than the
+         * PERIOD.
          */
-        protected void waitForNextFrame(long cycleStartTime)
+        protected void WaitForNextFrame(long cycleStartTime)
         {
             long dt = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() - cycleStartTime;
             if (dt < GameEngineImpl._period)
@@ -159,7 +172,7 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
                 }
                 catch (Exception e)
                 {
-                    
+                    Console.WriteLine(e.ToString());   
                 }
             }
 
@@ -170,6 +183,7 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
         protected void ProcessInput(){}
 
         /*
+         * Check the events present in the respective queue and manage them one by one.
          */
         private void CheckEvents()
         {

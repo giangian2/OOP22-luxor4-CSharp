@@ -2,9 +2,7 @@
 {
     public class RectBoundingBox
     {
-        public RectBoundingBox(int width, int height)
-        {
-
-        }
+        public RectBoundingBox(int width, int height) { }
+        
     }
 }

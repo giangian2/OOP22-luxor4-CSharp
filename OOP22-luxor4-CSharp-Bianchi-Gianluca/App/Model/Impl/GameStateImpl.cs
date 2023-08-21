@@ -9,50 +9,36 @@ using System.Threading.Tasks;
 
 namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Impl
 {
-    internal class GameStateImpl : IGameState
+    public class GameStateImpl : IGameState
     {
-        public bool status=false;
-     
-        public GameStateImpl(IWorldEventListener eventListener, GameEngineImpl.LevelDelegate level) { 
-        }
-        public void ChangePauseState()
-        {
-            throw new NotImplementedException();
+        private int _score;
+        private IWorld _world;
+        private bool _pause;
+        private GameEngineImpl.LevelDelegate _levelDelegate;
+
+        public int Score { get { return _score; } }
+        public IWorld World { get { return _world; } }
+
+        public GameStateImpl(IWorldEventListener eventListener, GameEngineImpl.LevelDelegate level) {
+            this._score = 0;
+            this._pause = false;
+            this._levelDelegate = level;
+            this.LoadLevel();
+            this._world.SetEventListener(eventListener);
         }
 
-        public void DecScore()
-        {
-            throw new NotImplementedException();
-        }
+        public void ChangePauseState() => this._pause = !this._pause;
 
-        public int GetScore()
-        {
-            throw new NotImplementedException();
-        }
+        public void DecScore() => this._score--;
 
-        public IWorld GetWorld()
-        {
-            throw new NotImplementedException();
-        }
+        public void IncScore() => this._score++;
 
-        public void IncScore()
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsGameOver() => this._score >= 20; //Implementazione utile per il testing
 
-        public bool IsGameOver()
-        {
-            return status;
-        }
+        public bool IsWin() => this._score < 20 && this._score >= 10; //Implementazione utile per il testing
 
-        public bool IsWin()
-        {
-            return false;
-        }
+        public void Update(long dt) { }
 
-        public void Update(long dt)
-        {
-           
-        }
+        private void LoadLevel() => this._world = this._levelDelegate.Invoke();
     }
 }
