@@ -15,6 +15,9 @@ using static OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl.GameEngineImpl;
 
 namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests
 {
+    /*
+     * Test class to verify the correct functioning of the game engine
+     */
     [TestFixture]
     internal class GameEngineTest
     {
@@ -27,6 +30,10 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests
             Engine = new GameEngineImpl(Levels.L1);
         }
 
+        /*
+         * Verify the correct functioning of the main loop,
+         * initializing the game endigne and starting the main loop
+         */
         [Test]
         public void TestMainLoopLevel1()
         {
@@ -42,6 +49,10 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests
             });
         }
 
+        /*
+         * Verify that the game engine correctly detects 
+         * the game over state and stops the main loop
+         */
         [Test]
         public void TestGameOver()
         {
@@ -50,6 +61,7 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests
                 Task t = Task.Factory.StartNew(() =>
                 {
                     Engine.InitGame();
+
                     Engine.MainLoop();
                     foreach (int value in Enumerable.Range(1, 15))
                     {
@@ -57,6 +69,32 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests
                     }
 
                     Assert.True(Engine.GameState.IsGameOver());
+                });
+
+                t.Wait(2000);
+            });
+        }
+
+        /*
+         * Verify that the game engine correctly detects 
+         * the win state and stops the main loop
+         */
+        [Test]
+        public void TestWinState()
+        {
+            Assert.DoesNotThrow(() =>
+            {
+                Task t = Task.Factory.StartNew(() =>
+                {
+                    Engine.InitGame();
+
+                    Engine.MainLoop();
+                    foreach (int value in Enumerable.Range(1, 30))
+                    {
+                        Engine.GameState.IncScore();
+                    }
+
+                    Assert.True(Engine.GameState.IsWin());
                 });
 
                 t.Wait(2000);
