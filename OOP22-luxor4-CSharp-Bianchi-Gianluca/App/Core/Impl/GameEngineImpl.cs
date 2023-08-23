@@ -3,7 +3,6 @@ using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Enums;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Events.Api;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Events.Impl;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Graphics.Api;
-using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Input.Api;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Api;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Impl;
 
@@ -64,7 +63,7 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
                      * development process for the creation of new levels.
                      */
                     LevelDelegate level1 = () => {
-                        return new WorldImpl(new RectBoundingBox(600,800), 10, 1, "testPath1",  this, new Cannon(470, 470));
+                        return new WorldImpl(new RectBoundingBox(new P2d(0,0), new P2d(0,0)), 10, 1, "testPath1",  this, new WorldImpl.Cannon());
                     };
                     var gamestate1= new GameStateImpl(this, level1);
                     this.GameState= gamestate1;
@@ -74,7 +73,7 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
                 case Levels.L2:
 
                     LevelDelegate level2 = () => {
-                        return new WorldImpl(new RectBoundingBox(600, 800), 20, 2, "testPath2", this, new Cannon(470, 470));
+                        return new WorldImpl(new RectBoundingBox(new P2d(0, 0), new P2d(0, 0)), 20, 2, "testPath2", this, new WorldImpl.Cannon());
                     };
 
                     var gamestate2 = new GameStateImpl(this, level2);
@@ -204,7 +203,13 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl
                 }
             });
         }
-       
 
+        /*
+         * Nested class to define the KeyboardInputController class that is used only by the GameEngineImpl class 
+         */
+        private class KeyboardInputController
+        {
+            public KeyboardInputController(){}
+        }
     }
 }

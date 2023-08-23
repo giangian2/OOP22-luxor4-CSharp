@@ -59,11 +59,11 @@
     <Compile Include="App\Events\Impl\HitBorderEvent.cs" />
     <Compile Include="App\Events\Impl\PauseGameEvent.cs" />
     <Compile Include="App\Graphics\Api\IScene.cs" />
-    <Compile Include="App\Input\Api\KeyboardInputController.cs" />
+    <Compile Include="App\Model\Api\IBoundingBox.cs" />
     <Compile Include="App\Model\Api\IGameState.cs" />
     <Compile Include="App\Model\Api\IWorld.cs" />
-    <Compile Include="App\Model\Impl\Cannon.cs" />
     <Compile Include="App\Model\Impl\GameStateImpl.cs" />
+    <Compile Include="App\Model\Impl\P2d.cs" />
     <Compile Include="App\Model\Impl\RectBoundingBox.cs" />
     <Compile Include="App\Model\Impl\WorldImpl.cs" />
     <Compile Include="Program.cs" />
@@ -72,12 +72,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OOP22-luxor4-CSharp-Candoli-Francesco\OOP22-luxor4-CSharp-Candoli-Francesco.csproj">
-      <Project>{2340a50e-bdea-4225-a0a4-903a99e610a1}</Project>
-      <Name>OOP22-luxor4-CSharp-Candoli-Francesco</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

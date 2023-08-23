@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Input.Api
+namespace OOP22_luxor4_CSharp_DeNardi_Chiara
 {
-    internal class KeyboardInputController
+    internal class Program
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }

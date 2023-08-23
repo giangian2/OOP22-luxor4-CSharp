@@ -7,10 +7,6 @@ using NUnit.Framework;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Api;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Enums;
-using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Events.Api;
-using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Api;
-using OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Impl;
-using static OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Core.Impl.GameEngineImpl;
 
 
 namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Tests

@@ -17,7 +17,7 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Impl
         private Cannon _cannon;
         private IWorldEventListener _listener;
 
-        public Cannon Cannon { get { return _cannon; } }
+        public Cannon cannon => _cannon;
 
         public WorldImpl(RectBoundingBox bbox, int nBalls,int steps, string xmlSrc,
              IWorldEventListener eventListener, Cannon cannon)
@@ -35,6 +35,14 @@ namespace OOP22_luxor4_CSharp_Bianchi_Gianluca.App.Model.Impl
             //Shift balls
             //Update cannon fired balls
             //Update stationary ball
+        }
+
+        /*
+         * Nested class to define the Cannon class that is referenced in other classes. 
+         * It's implementation is never used in this project.
+         */
+        public class Cannon
+        {
         }
     }
 }
