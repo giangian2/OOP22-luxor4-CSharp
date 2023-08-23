@@ -73,7 +73,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OOP22-luxor4-CSharp-Candoli-Francesco\OOP22-luxor4-CSharp-Candoli-Francesco.csproj">
+      <Project>{2340a50e-bdea-4225-a0a4-903a99e610a1}</Project>
+      <Name>OOP22-luxor4-CSharp-Candoli-Francesco</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
