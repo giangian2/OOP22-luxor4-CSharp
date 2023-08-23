@@ -5,6 +5,10 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP22-luxor4-CSharp-Bianchi-Gianluca", "OOP22-luxor4-CSharp-Bianchi-Gianluca\OOP22-luxor4-CSharp-Bianchi-Gianluca.csproj", "{C54E252A-8CD5-4DAB-9640-1792DDC6B94E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{600E2B95-8EDC-43C1-9ADD-1234F2C2327E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP22-luxor4-CSharp-Candoli-Francesco", "OOP22-luxor4-CSharp-Candoli-Francesco\OOP22-luxor4-CSharp-Candoli-Francesco.csproj", "{2340A50E-BDEA-4225-A0A4-903A99E610A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{C54E252A-8CD5-4DAB-9640-1792DDC6B94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C54E252A-8CD5-4DAB-9640-1792DDC6B94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C54E252A-8CD5-4DAB-9640-1792DDC6B94E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600E2B95-8EDC-43C1-9ADD-1234F2C2327E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600E2B95-8EDC-43C1-9ADD-1234F2C2327E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600E2B95-8EDC-43C1-9ADD-1234F2C2327E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600E2B95-8EDC-43C1-9ADD-1234F2C2327E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2340A50E-BDEA-4225-A0A4-903A99E610A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2340A50E-BDEA-4225-A0A4-903A99E610A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2340A50E-BDEA-4225-A0A4-903A99E610A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2340A50E-BDEA-4225-A0A4-903A99E610A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
