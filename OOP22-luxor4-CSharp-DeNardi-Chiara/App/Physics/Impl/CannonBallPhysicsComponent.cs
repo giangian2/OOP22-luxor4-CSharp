@@ -3,8 +3,9 @@ using System.Linq;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.Model.Api.IWorld;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.Events.Impl.HitBallEvent;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.Events.Impl.HitBorderEvent;
-
-//MANCA cirlcebbox, ball, gameobj
+using OOP22_luxor4_CSharp_Guiducci_Federica.model;
+using OOP22_luxor4_CSharp_Candoli_Francesco.Model;
+using OOP22_luxor4_CSharp_DeNardi_Chiara.Model;
 
 namespace OOP22_luxor4_CSharp_DeNardi_Chiara.Physics.Impl
 {

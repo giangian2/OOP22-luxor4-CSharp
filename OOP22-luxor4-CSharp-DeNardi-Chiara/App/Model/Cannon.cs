@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using OOP22_luxor4_CSharp_DeNardi_Chiara.App.Physics.Api;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.Model.Api.IWorld;
-
-//MANCANO playerinputcomponent, p2d, v2d, gameobjfactory
-//ball color, cannongraphicscomp
+using OOP22_luxor4_CSharp_Guiducci_Federica.input.PlayerInputComponent;
+using OOP22_luxor4_CSharp_Guiducci_Federica.core.gameobjfactory;
+using OOP22_luxor4_CSharp_Candoli_Francesco.Utils;
+using OOP22_luxor4_CSharp_Candoli_Francesco.Enums;
 
 
 namespace OOP22_luxor4_CSharp_DeNardi_Chiara.App.Model
@@ -31,8 +32,8 @@ namespace OOP22_luxor4_CSharp_DeNardi_Chiara.App.Model
         /// <param name="physics">Physics component for simulating Cannon's physics.</param>
         /// <param name="graph">Graphics component for rendering the Cannon.</param>
         public Cannon(P2d pos, V2d vel, PlayerInputComponent input,
-            PhysicsComponent physics, CannonGraphicsComponent graph)
-            : base(Type.CANNON, pos, vel, input, null, graph, physics)
+            PhysicsComponent physics)
+            : base(Type.CANNON, pos, vel, input, null, physics)
         {
             this.cannonBalls = new List<Ball>();
             this.stationaryBall = CreateStationaryBall();

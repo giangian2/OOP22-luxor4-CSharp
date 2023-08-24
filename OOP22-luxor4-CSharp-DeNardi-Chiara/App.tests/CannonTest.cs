@@ -1,8 +1,8 @@
 using NUnit.Framework;
 using OOP22_luxor4_CSharp_DeNardi_Chiara.Model; 
 using OOP22_luxor4_CSharp_DeNardi_Chiara.App.Physics.API;
-
-//MANCANO p2d, v2d, playerinputcom, cannongraph
+using OOP22_luxor4_CSharp_Candoli_Francesco.Utils;
+using OOP22_luxor4_CSharp_Guiducci_Federica.input.impl;
 
 namespace OOP22_luxor4_CSharp_DeNardi_Chiara.App.Tests
 {
@@ -17,18 +17,21 @@ namespace OOP22_luxor4_CSharp_DeNardi_Chiara.App.Tests
         private V2d vel;
         private PlayerInputComponent input;
         private PhysicsComponent physics;
-        private CannonGraphicsComponent graph;
 
         [SetUp]
         public void SetUp()
         {
-            position = new P2d(/* specify initial coordinates */);
-            vel = new V2d(/* specify initial velocity */);
-            input = new PlayerInputComponent(/* specify input */);
-            physics = new PhysicsComponent();
-            graph = new CannonGraphicsComponent(/* specify graphics component */);
+            position = new P2d(x, y);
+            vel = new V2d(x, y);
+             // Create an instance of InputController
+            InputController inputController = new InputController();
 
-            cannon = new Cannon(position, vel, input, physics, graph);
+            // Instantiate the PlayerInputComponent with the inputController
+            input = new PlayerInputComponent(inputController);
+
+            physics = new PhysicsComponent();
+
+            cannon = new Cannon(position, vel, input, physics);
         }
 
         /// <summary>

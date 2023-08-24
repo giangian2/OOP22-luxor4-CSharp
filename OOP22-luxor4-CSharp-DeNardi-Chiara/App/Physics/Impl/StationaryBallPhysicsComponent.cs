@@ -1,9 +1,7 @@
 using OOP22_luxor4_CSharp_DeNardi_Chiara.Model.Impl; 
 using OOP22_luxor4_CSharp_DeNardi_Chiara.App.Physics.Api;
 using OOP22_luxor4_CSharp_Bianchi_Gianluca.Model.Api.IWorld;
-
-
-//MANCA gameobj
+using OOP22_luxor4_CSharp_Guiducci_Federica.model;
 
 namespace OOP22_luxor4_CSharp_DeNardi_Chiara.Physics.Impl
 {
