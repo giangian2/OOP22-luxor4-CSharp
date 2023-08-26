@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace OOP22_luxor4_CSharp_Candoli_Francesco
+namespace OOP22_luxor4_CSharp_Candoli_Francesco.App.Model.Api
 {
-    internal class Program
+    public interface IWorld
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
